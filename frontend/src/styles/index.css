@@ -3,8 +3,30 @@
 @tailwind utilities;
 
 body {
-  background: #1f1f1f;
+  cursor: default;
+  user-select: none;
+  background: #000;
   color: #f2f3f4;
   margin: 0;
   padding: 0;
+}
+
+.active {
+  background: #1f1f1f;
+  color: #fff;
+}
+
+.count {
+  background: #1f1f1f;
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 0.25rem;
+  height: 1.75rem;
+  width: 1.75rem;
+
+}
+
+.active .count {
+  background: #1f1f1f;
+  color: cyan;
 }
