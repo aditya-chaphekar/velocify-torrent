@@ -1,3 +1,4 @@
 [submodule "frontend"]
 	path = frontend
 	url = git@github.com:aditya-chaphekar/velocify-frontend.git
+	branch = production
