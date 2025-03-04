@@ -7,20 +7,25 @@ interface WindowIconProps {
   className?: string;
 }
 
-const WindowIcon: React.FC<WindowIconProps> = ({
+const WindowIcon = ({
   icon,
   onClick,
   className,
-}) => {
+}: WindowIconProps) => {
+  const IconComponent = Icon?.[icon as keyof typeof Icon];
+  if (!IconComponent) {
+    // Fallback if the icon doesn't exist
+    return <span>Icon not found </span>;
+  }
   return (
     <div
       className={`p-1 flex items-center cursor-pointer justify-center rounded-full ${className}`}
       onClick={onClick}
     >
-      {React.createElement(Icon[icon], {
-        size: 12,
-        style: { stroke: "inherit", strokeWidth: 3 },
-      })}
+      <IconComponent
+        size={12}
+        style={ { stroke: "inherit", strokeWidth: 3 }}
+       />
     </div>
   );
 };
